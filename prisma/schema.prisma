@@ -1,0 +1,205 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id               String             @id @default(cuid())
+  name             String?
+  nickname         String?
+  email            String?            @unique
+  emailVerified    DateTime?
+  image            String?
+  accounts         Account[]
+  sessions         Session[]
+  // Optional for WebAuthn support
+  Authenticator    Authenticator[]
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+  UserWallet       UserWallet[]
+  initalized       Boolean            @default(false)
+  transactions     transactions[]
+  payment_category payment_category[]
+  payment_details  payment_details[]
+  // api_key          api_key[]
+}
+
+model Account {
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([provider, providerAccountId])
+}
+
+model Session {
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model VerificationToken {
+  identifier String
+  token      String
+  expires    DateTime
+
+  @@id([identifier, token])
+}
+
+// Optional for WebAuthn support
+model Authenticator {
+  credentialID         String  @unique
+  userId               String
+  providerAccountId    String
+  credentialPublicKey  String
+  counter              Int
+  credentialDeviceType String
+  credentialBackedUp   Boolean
+  transports           String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, credentialID])
+}
+
+// model api_key {
+//   id        String   @id @default(cuid())
+//   key       String   @unique
+//   user      User     @relation(fields: [userId], references: [id])
+//   userId    String
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+// }
+
+enum Chain {
+  SOLANA
+}
+
+model UserWallet {
+  id                   String            @id @default(cuid()) // Wallet ID    
+  walletname           String?
+  userId               String
+  user                 User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  chain                Chain
+  payment_details      payment_details[]
+  publicKey            String
+  privateKey           String
+  createdAt            DateTime          @default(now())
+  updatedAt            DateTime          @updatedAt
+  salt_for_pin         String?
+  nonce_for_encryption String?
+}
+
+model SupportedTokens {
+  id         String   @id @default(cuid())
+  chain      Chain
+  decimal    Int
+  token_mint String
+  symbol     String
+  name       String
+  imageUrl   String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+enum transaction_type {
+  NATIVECOIN
+}
+
+model transactions {
+  id                    String           @id @default(cuid())
+  chain                 Chain
+  transection_type      transaction_type
+  mint_address          String?
+  from                  String
+  to                    String
+  amount                Float
+  transaction_signature String
+  user                  User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId                String
+}
+
+model payment_category {
+  id              String            @id @default(cuid())
+  category_id     String            @unique
+  name            String
+  active          Boolean           @default(false)
+  user            User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId          String
+  payment_details payment_details[]
+  createdAt       DateTime          @default(now())
+}
+
+enum payment_type {
+  // ANY
+  NATIVECOIN
+  // TOKEN
+}
+
+enum amount_type {
+  FLEXIBLE
+  FIXED
+}
+
+model payment_details {
+  id               String              @id @default(cuid())
+  payment_type     payment_type
+  amount_type      amount_type
+  amount           Float?
+  icon             String?
+  title            String
+  description      String?
+  redirectUrl      String?
+  webhookUrl       String?
+  active           Boolean             @default(false)
+  payment_category payment_category    @relation(fields: [category_id], references: [category_id])
+  category_id      String
+  payments         received_payments[]
+  UserWallet       UserWallet          @relation(fields: [userWalletId], references: [id])
+  userWalletId     String
+  User             User                @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId           String
+  createdAt        DateTime            @default(now())
+}
+
+model received_payments {
+  id                    String          @id @default(cuid())
+  transaction_signature String
+  success               Boolean
+  swappable             Boolean
+  swapped               Boolean
+  token_mint            String
+  from                  String
+  to                    String
+  amount                Float
+  payment_details       payment_details @relation(fields: [payment_detail_id], references: [id], onDelete: Cascade)
+  payment_detail_id     String
+  createdAt             DateTime        @default(now())
+}

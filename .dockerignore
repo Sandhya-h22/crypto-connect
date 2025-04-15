@@ -1,0 +1,11 @@
+node_modules
+/.next/
+
+.env*.local
+.env
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+.pnpm-store/v3/files
+
