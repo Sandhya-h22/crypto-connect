@@ -3,6 +3,7 @@ import { conn } from "@/lib/solana";
 import { $Enums } from "@prisma/client";
 import { LAMPORTS_PER_SOL, PublicKey } from "@solana/web3.js";
 import { getAccount, getAssociatedTokenAddress } from "@solana/spl-token";
+
 export async function UserTotalBalance({
   email,
   chain,
@@ -120,4 +121,41 @@ export async function getUserAvailableTokens({
     };
   });
   return await Promise.all(AvailableTokenDetails);
+}
+
+export async function UserSolBalance({
+  email,
+  chain,
+}: {
+  email: string;
+  chain: $Enums.Chain;
+}) {
+  const UserDB = await prisma.user.findUnique({
+    where: {
+      email: email,
+    },
+    include: {
+      UserWallet: true,
+    },
+  });
+
+  // Get the public key of the user's wallet
+  const UserPubKey = new PublicKey(
+    UserDB?.UserWallet.filter((d) => d.chain === chain)[0]?.publicKey as string,
+  );
+
+  // Fetch the SOL balance
+  const solBalanceInLamports = await conn.getBalance(UserPubKey);
+  console.log("User public key lololol ", UserPubKey);
+  console.log("User SOL balance in lamports: ", solBalanceInLamports);
+
+  // Convert lamports to SOL
+  const solBalance = solBalanceInLamports / LAMPORTS_PER_SOL;
+
+  // Return the SOL balance as JSX
+  return (
+    <div className="xl:text-4xl text-2xl">
+      {solBalance.toFixed(2)} <span className="text-base">SOL</span>
+    </div>
+  );
 }

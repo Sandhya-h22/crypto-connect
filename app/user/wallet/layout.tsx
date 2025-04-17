@@ -1,6 +1,7 @@
 import { auth } from "@/auth";
 import WalletActions from "./WalletActions";
 import { UserTotalBalance } from "./UserInfo";
+import { UserSolBalance } from "./UserInfo";
 import { Suspense } from "react";
 import prisma from "@/lib/db";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -47,7 +48,7 @@ async function UserLayout({ children }: { children: React.ReactNode }) {
                 </div>
               }
             >
-              <UserTotalBalance
+              <UserSolBalance
                 email={user?.user?.email as string}
                 chain="SOLANA"
               />
