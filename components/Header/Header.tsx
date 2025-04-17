@@ -21,15 +21,6 @@ const Header = () => {
           <span className="text-xl font-bold text-gray-800">CryptoConnect</span>
         </div>
 
-        {/* Navigation Links with more spacing */}
-        <nav className="ml-12">
-          <ul className="flex space-x-8 text-gray-700 font-semibold">
-            <li><Link href="#payment" className="hover:text-sky-500">Payment</Link></li>
-            <li><Link href="#earn" className="hover:text-sky-500">Earn</Link></li>
-            <li><Link href="#apis" className="hover:text-sky-500">APIs</Link></li>
-            <li><Link href="#blog" className="hover:text-sky-500">Blog</Link></li>
-          </ul>
-        </nav>
       </div>
 
       {/* Right Side: Login & Signup */}

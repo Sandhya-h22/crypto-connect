@@ -23,12 +23,14 @@ export default function AppBar() {
       <div className="flex items-center gap-2">
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src={"https://static.aaraz.me/payko/logo.svg"}
+
+            src={"https://yt3.googleusercontent.com/wDC9y0YFW4zH9I-kXiVrnH3okS4L5AX2P22bBWDj0CTfxNcsFQEvcoV6H93PTjl4QDb1attvdrU=s160-c-k-c0x00ffffff-no-rj"}
             alt="Logo"
-            className="w-20"
-            height={1000} // Arbitrary height
-            width={1000} // Arbitrary width
+            className="rounded-full"
+            height={50} // Arbitrary height
+            width={50} // Arbitrary width
           />
+          <h1 className="font-bold">CryptoConnect</h1>
         </Link>
       </div>
       <nav className="hidden text-base items-center gap-4 md:flex">
@@ -45,7 +47,7 @@ export default function AppBar() {
           Wallet
         </Link>
         <Link
-          href="https://github.com/blockx3/payko"
+          href="https://github.com/Sandhya-h22/crypto-connect/tree/main"
           target="_blank"
           className="font-medium text-muted-foreground hover:text-foreground"
         >

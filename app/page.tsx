@@ -32,7 +32,7 @@ function Main() {
         className="absolute xl:top-20 bottom-0 right-0 -z-10 pointer-events-none"
       >
         <Image
-          src="https://static.aaraz.me/payko/abstract_obj.png"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwQU-A9ZcFxRSRHvMeugwFEvJ6mZRNBgf0mQ&s"
           alt="Decorative background"
           height={500}
           width={500}
@@ -63,7 +63,7 @@ function Main() {
                      src="https://yt3.googleusercontent.com/wDC9y0YFW4zH9I-kXiVrnH3okS4L5AX2P22bBWDj0CTfxNcsFQEvcoV6H93PTjl4QDb1attvdrU=s160-c-k-c0x00ffffff-no-rj"
                      className="rounded-full"
                    />
-                   <span className="text-7xl font-bold text-gray-800   ">CryptoConnect</span>
+                   <span className="text-7xl font-bold text-gray-800">CryptoConnect</span>
                  </div>
           
          

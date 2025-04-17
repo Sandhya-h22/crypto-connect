@@ -22,4 +22,7 @@ export default {
   theme: {
     logo: "/logo.svg",
   },
+  pages: {
+    signIn: "/auth/signin", // Custom sign-in page
+  },
 } satisfies NextAuthConfig;
