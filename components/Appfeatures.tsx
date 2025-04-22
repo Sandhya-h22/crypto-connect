@@ -10,7 +10,7 @@ export const AppFeatures = () => {
       description:
         "Sign up with Google account and start sending and receiving crypto in no time. Your private key is encrypted with your transaction PIN and stored securely.",
       imageUrl:
-        "https://github.com/user-attachments/assets/64958d79-2ad1-4af8-84bd-ad8af2e4a990",
+        "https://res.cloudinary.com/dorblk1gb/image/upload/v1745302455/easysignin.png",
         
     },
     {
@@ -18,7 +18,7 @@ export const AppFeatures = () => {
       description:
         "Send crypto to any address, receive crypto payments by generating payment links, and create multiple wallets - all within one beautiful app.",
       imageUrl:
-        "https://github.com/user-attachments/assets/545292a6-2a10-4cba-94af-b6b636a6a491",
+        "https://res.cloudinary.com/dorblk1gb/image/upload/v1745302535/allinone.png",
     },
     {
       title: "Payment Categories",
@@ -32,14 +32,14 @@ export const AppFeatures = () => {
       description:
         "Create multiple wallets for different businesses, customers, products or services. Manage everything from one convenient dashboard.",
       imageUrl:
-        "https://github.com/user-attachments/assets/7dbc7089-ef48-4373-8785-9b2d4d997403",
+        "https://res.cloudinary.com/dorblk1gb/image/upload/v1745302495/multiwallet.png",
     },
     {
-      title: "Slim & Clean Payment Page",
+      title: "Pin based Transactions",
       description:
-        "Provide your customers with a sleek, intuitive payment experience that makes transactions fast and seamless.",
+        "Provide your customers with a simple, intuitive payment experience that makes transactions fast and seamless with just a 6 digit pin.",
       imageUrl:
-        "https://github.com/user-attachments/assets/dd7a0cd1-9bab-4be8-90b8-3c5b95bf4ea5",
+        "https://res.cloudinary.com/dorblk1gb/image/upload/v1745302377/6digitpin.png",
     },
   ];
 
