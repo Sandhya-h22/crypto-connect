@@ -157,7 +157,7 @@ function Main() {
             </a>
           </li>
           <li>
-            <a href="#" target="_blank" className="hover:text-indigo-600 transition-colors">
+            <a href="https://www.helius.dev/" target="_blank" className="hover:text-indigo-600 transition-colors">
               API Reference
             </a>
           </li>
