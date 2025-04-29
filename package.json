@@ -1,9 +1,11 @@
 {
-  "name": "payko",
+  "name": "crypto",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "build": "next build",
     "start": "next start",
     "docker-dev": "bash ./meta/docker.sh dev",
