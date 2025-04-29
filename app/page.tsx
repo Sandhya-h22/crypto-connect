@@ -201,14 +201,6 @@ function Main() {
           <a href="https://github.com/Sandhya-h22/crypto-connect"  target="_blank" className="hover:text-indigo-600 transition-colors" aria-label="GitHub">
             <Github size={20} />
           </a>
-          <a href="#" className="hover:text-indigo-600 transition-colors" aria-label="Website">
-            <ExternalLink size={20} />
-          </a>
-          <a href="#" className="hover:text-indigo-600 transition-colors" aria-label="Discord">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-5 h-5">
-              <path d="M22 24c-.4-1.5-.7-2.8-1-4.2-.3-1.2-.6-2.5-1-3.7 1-.4 1.7-1 2.1-2-.6.3-1.2.5-1.9.6-.6-.6-1.3-1-2.1-1.3-.9-.3-1.8-.5-2.8-.5s-1.9.2-2.8.5c-.8.3-1.5.8-2.1 1.3-.6-.1-1.3-.3-1.9-.6.4 1 .9 1.6 2.1 2-.4 1.2-.7 2.5-1 3.7-.3 1.4-.6 2.7-1 4.2 1.7-1 3.2-2 4.9-2.9 1.7.9 3.2 1.9 4.9 2.9z" />
-            </svg>
-          </a>
           <a href="#" className="hover:text-indigo-600 transition-colors" aria-label="LinkedIn">
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-5 h-5">
               <path d="M4.98 3.5C4.98 5 3.94 6 2.48 6H2.45C1 6 0 5 0 3.5S1 1 2.45 1C3.91 1 4.98 2 4.98 3.5zM.5 8.98h4v15h-4v-15zm7.5 0h3.8v2.2h.05c.53-1 1.84-2.2 3.8-2.2 4.07 0 4.82 2.63 4.82 6v6.98h-4v-6.2c0-1.5-.03-3.44-2.1-3.44-2.1 0-2.42 1.63-2.42 3.32v6.3h-4v-15z" />
