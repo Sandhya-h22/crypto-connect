@@ -25,7 +25,7 @@ export const CTAsection = () => {
                 </h2>
                 <p className="text-indigo-100 text-lg max-w-xl">
                   Join thousands of users who are already enjoying the
-                  simplicity and security of PayKo for their crypto
+                  simplicity and security of CryptoConnect for their crypto
                   transactions.
                 </p>
               </div>
@@ -33,13 +33,13 @@ export const CTAsection = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="#"
-                  className="px-8 py-4 bg-white text-indigo-600 font-bold rounded-full hover:shadow-lg transition-all duration-300 text-center"
+                  className="px-8 py-4 bg-white text-indigo-600 font-bold rounded-full hover:shadow-lg hover:-translate-y-1 hover:bg-indigo-100 transition-all duration-300 transform text-center"
                 >
                   Create Account
                 </a>
                 <a
                   href="#"
-                  className="px-8 py-4 bg-indigo-700/30 text-white font-bold rounded-full hover:bg-indigo-700/50 transition-all duration-300 text-center"
+                  className="px-8 py-4 bg-indigo-700/30 text-white font-bold rounded-full hover:-translate-y-1 hover:bg-indigo-700 transition-all duration-300 transform text-center"
                 >
                   Learn More
                 </a>
