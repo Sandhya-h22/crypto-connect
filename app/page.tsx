@@ -198,7 +198,7 @@ function Main() {
           <a href="#" className="hover:text-indigo-600 transition-colors" aria-label="Twitter">
             <Twitter size={20} />
           </a>
-          <a href="https://github.com/Sandhya-h22/crypto-connect" className="hover:text-indigo-600 transition-colors" aria-label="GitHub">
+          <a href="https://github.com/Sandhya-h22/crypto-connect"  target="_blank" className="hover:text-indigo-600 transition-colors" aria-label="GitHub">
             <Github size={20} />
           </a>
           <a href="#" className="hover:text-indigo-600 transition-colors" aria-label="Website">
