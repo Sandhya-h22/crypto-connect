@@ -59,16 +59,19 @@ function Main() {
       {/* Hero Section */}
       <div className="h-screen flex flex-col justify-center px-4 sm:px-6 lg:px-8 relative">
         <div className="xl:pl-16 pl-6 space-y-4 md:space-y-6 max-w-4xl">
-          <div className="flex items-center space-x-2 ">
-                   <Image
-                     alt="CryptoConnect"
-                     width={150}
-                     height={150}
-                     src="https://yt3.googleusercontent.com/wDC9y0YFW4zH9I-kXiVrnH3okS4L5AX2P22bBWDj0CTfxNcsFQEvcoV6H93PTjl4QDb1attvdrU=s160-c-k-c0x00ffffff-no-rj"
-                     className="rounded-full"
-                   />
-                   <span className="text-7xl font-bold text-gray-800">CryptoConnect</span>
-                 </div>
+        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+             <Image
+              alt="CryptoConnect"
+              width={100}
+              height={100}
+              src="https://yt3.googleusercontent.com/wDC9y0YFW4zH9I-kXiVrnH3okS4L5AX2P22bBWDj0CTfxNcsFQEvcoV6H93PTjl4QDb1attvdrU=s160-c-k-c0x00ffffff-no-rj"
+              className="rounded-full w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36"
+              />
+              <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-800 text-center sm:text-left">
+                CryptoConnect
+              </span>
+       </div>
+
           
          
           <div className="text-xl sm:text-2xl md:text-3xl xl:text-5xl flex flex-wrap gap-2 items-center font-bold pt-1 text-black xl:text-slate-600">
