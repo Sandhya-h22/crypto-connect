@@ -38,7 +38,7 @@ export const CTAsection = () => {
                   Create Account
                 </a>
                 <a
-                  href="#"
+                  href="https://github.com/Sandhya-h22/crypto-connect" target="_blank"
                   className="px-8 py-4 bg-indigo-700/30 text-white font-bold rounded-full hover:-translate-y-1 hover:bg-indigo-700 transition-all duration-300 transform text-center"
                 >
                   Learn More
