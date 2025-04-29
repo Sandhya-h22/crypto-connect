@@ -3,6 +3,7 @@
 import { AppFeatures } from "@/components/Appfeatures";
 import CTAsection from "@/components/CTAsection";
 import HomePageActionButtons from "@/components/HomePageButtons";
+import LoginButton from "@/components/LoginButton";
 import Stats from "@/components/Stats";
 import { Button } from "@/components/ui/button";
 import { MotionDiv } from "@/lib/UseClientUIs";
@@ -118,9 +119,10 @@ function Main() {
         <AppFeatures />
       </div>
       {/* Stats Section */}
-      {/* <Stats /> */}
+      <Stats />
 
       <CTAsection />
+      
 
       {/* Footer */}
       <footer className="bg-black py-16 px-4 sm:px-6 lg:px-8 border-t border-gray-100">
